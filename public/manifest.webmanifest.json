@@ -1,0 +1,38 @@
+{
+    "theme_color": "#d6f8d2",
+    "background_color": "#186712",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "DawateIslami India",
+    "short_name": "DawateIslami INDIA",
+    "description": "A global islamic movement serving ummah and preaching the message of Quraan and Sunnah in 50  departments",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

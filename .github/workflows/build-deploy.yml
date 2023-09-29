@@ -1,0 +1,43 @@
+name: Daily Build and Deploy
+
+on:
+  schedule:
+    - cron: '30 9,19 * * *' # Schedule daily at 3 PM IST and 12:30 AM IST (9:30 AM UTC and 7 PM UTC)
+    # - cron: '*/10 * * * *' # Test : Schedule every 10 minutes
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Adjust the version as needed
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build 
+        run: |
+          BACKEND_URL=$BACKEND_URL
+          TOKEN=$TOKEN
+          DISCORD_WEBHOOK_URL=$DISCORD_WEBHOOK_URL
+          npm run build
+        env:
+          BACKEND_URL: ${{ secrets.BACKEND_URL }} 
+          TOKEN: ${{ secrets.TOKEN }} 
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} 
+      
+      - name: Creating Output Directory
+        run: npx @cloudflare/next-on-pages
+      
+      - name: Deploy to Cloudflare
+        run: |
+          npx wrangler pages deploy .vercel/output/static --project-name dawateislamiindia-org
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }} # Set up this secret for Cloudflare
+

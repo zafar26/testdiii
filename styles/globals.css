@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+@layer base {
+
+  html,
+  body,
+  nav {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@font-face {
+  font-family: "JameelNooriNastaleeq";
+    src: url("../public/assets/jameel-noori-nastaleeq/Jameel\ Noori\ Nastaleeq\ New.ttf") format("opentype");
+  }
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat-animation {
+  animation: heartbeat 0.75s infinite;
+}
+
+h1 {
+  font-size: 36px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+h2 {
+  font-size: 28px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+h3 {
+  font-size: 24px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.text-urdu {
+  direction: rtl;
+}
