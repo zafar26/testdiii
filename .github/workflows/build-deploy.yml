@@ -32,12 +32,12 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }} 
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }} 
       
-      - name: Creating Output Directory
-        run: npx @cloudflare/next-on-pages
+      # - name: Creating Output Directory
+      #   run: npx @cloudflare/next-on-pages
       
-      - name: Deploy to Cloudflare
-        run: |
-          npx wrangler pages deploy .vercel/output/static --project-name dawateislamiindia-org
-        env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }} # Set up this secret for Cloudflare
+      # - name: Deploy to Cloudflare
+      #   run: |
+      #     npx wrangler pages deploy .vercel/output/static --project-name dawateislamiindia-org
+      #   env:
+      #     CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }} # Set up this secret for Cloudflare
 
